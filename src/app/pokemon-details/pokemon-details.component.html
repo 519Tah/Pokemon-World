@@ -1,0 +1,35 @@
+
+<div class="grid-container" >
+    <mat-grid-list  cols="1" contenteditable="5" draggable="true" [draggable]="true" rowHeight="2:1">
+      <mat-grid-tile>
+        <mat-card class="example-card">
+          <div class="w-100">
+          <mat-card-header>
+            <!-- <div mat-card-avatar class="example-header-image" > <img [src]="pokemon.sprites.front_default"></div> -->
+            <mat-card-title>{{ pokemon.name | uppercase}}</mat-card-title>
+            <mat-card-subtitle>Type: {{ pokemon.types[0].type.name | uppercase}}</mat-card-subtitle>
+            <mat-card-subtitle *ngIf="pokemon.types[0].type.name == 'fire'" >  🔥 </mat-card-subtitle>
+            <mat-card-subtitle *ngIf="pokemon.types[0].type.name == 'water'" >  💧 </mat-card-subtitle>
+            <mat-card-subtitle *ngIf="pokemon.types[0].type.name == 'grass'" >  🍃🌿 </mat-card-subtitle>
+            <mat-card-subtitle *ngIf="pokemon.types[0].type.name == 'bug'"> 🐛🦗 </mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image [src]="pokemon.sprites.front_default" alt="Pokemon">
+          <mat-card-content>
+            <span>Base Experience: {{ pokemon.base_experience }} </span><br>
+            <span>Height:{{ pokemon.height }}  </span><br>
+            <span>weight:{{ pokemon.weight }} </span>
+          </mat-card-content>
+          <mat-card-actions>
+            <span class="ability-header">Abilities</span>
+          </mat-card-actions>
+          <div *ngIf="pokemon.abilities !== 0">
+          <mat-card-content *ngFor="let skill of pokemon.abilities">
+            <li> {{ skill.ability.name }} </li><br>
+          </mat-card-content>
+        </div>
+        </div>
+        </mat-card>
+        
+      </mat-grid-tile>
+    </mat-grid-list>
+    </div>

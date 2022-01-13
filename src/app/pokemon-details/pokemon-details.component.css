@@ -1,0 +1,14 @@
+.example-card {
+
+    width: 250px;
+    margin: 10px;
+  }
+.ability-header{
+    text-align: center;
+    font-size: 25px;
+    padding-left: 7PX;
+}
+.grid-container{
+    margin: auto;
+    padding-top: 0px;
+}

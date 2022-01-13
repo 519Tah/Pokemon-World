@@ -1,0 +1,42 @@
+
+
+td{
+    font-size: 1em;
+}
+
+.example-card {
+    width: 300px;
+    margin: 10px;
+    padding-top: 0;
+  }
+  
+  .example-header-image {
+    /* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg'); */
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    border-radius: 25%;
+  }
+
+
+
+
+table {
+    width: 350px;
+    padding: 0px;
+}
+.grid-container{
+    max-width: 2000px;
+    margin: 10px;
+}
+
+button{
+    width: 100%;
+    margin-top: 15px;
+}
+
+
+
+.pagination{
+    text-align: center;
+}

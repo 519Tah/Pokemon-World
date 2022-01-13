@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 /* Application-wide Styles */
 h1 {
-    color: #369;
+    margin: auto;  
+    color: whitesmoke;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 250%;
   }
   h2, h3 {
     color: #444;
@@ -11,7 +11,8 @@ h1 {
     font-weight: lighter;
   }
   body {
-    margin: 2em;
+  
+    max-width: 2000px;
   }
   body, input[type="text"], button {
     color: #333;
@@ -21,3 +22,16 @@ h1 {
   * {
     font-family: Arial, Helvetica, sans-serif;
   }
+
+ 
+html, body { height: 100vh; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+html { 
+  background: url(app/pic/pokemon-world.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

@@ -1,0 +1,35 @@
+
+
+<div class="grid-container" >
+    <mat-grid-list  cols="1" contenteditable="5" draggable="true" [draggable]="true" rowHeight="3:1">
+      <mat-grid-tile>
+        <mat-card class="example-card"  *ngFor="let pokemon of pokemons | paginate: {itemsPerPage: 10, currentPage: page, totalItems: maxPokemonNumber}" >
+          <div class="w-100">
+          <mat-card-header>
+            <!-- <div mat-card-avatar class="example-header-image" > <img [src]="pokemon.sprites.front_default"></div> -->
+            <mat-card-title>{{ pokemon.name | titlecase }}</mat-card-title>
+            <mat-card-subtitle>Type: {{ pokemon.types[0].type.name | uppercase}}</mat-card-subtitle>
+            <mat-card-subtitle *ngIf="pokemon.types[0].type.name == 'fire'" >  🔥 </mat-card-subtitle>
+            <mat-card-subtitle *ngIf="pokemon.types[0].type.name == 'water'" >  💧 </mat-card-subtitle>
+            <mat-card-subtitle *ngIf="pokemon.types[0].type.name == 'grass'" >  🍃🌿 </mat-card-subtitle>
+            <mat-card-subtitle *ngIf="pokemon.types[0].type.name == 'bug'"> 🐛🦗 </mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image  (click)="detailPage(pokemon.id)" [src]="pokemon.sprites.front_default" alt="Pokemon" >
+          <mat-card-content>
+            <span>Base Experience: {{ pokemon.base_experience }} </span><br>
+            <span>Height:{{ pokemon.height }}  </span><br>
+            <span>weight:{{ pokemon.weight }} </span>
+            
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button (click)="detailPage(pokemon.id)">Abilities</button>
+          </mat-card-actions>
+        </div>
+        </mat-card>
+        
+      </mat-grid-tile>
+    </mat-grid-list>
+</div>
+<div class="pagination">
+<pagination-controls (pageChange)="page = $event; pokemons = []; getPokemonData()" ></pagination-controls>
+</div>
